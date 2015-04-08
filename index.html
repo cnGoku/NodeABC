@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <title>JQuery test</title>
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.1.3.min.js"></script>
+</head>
+
+<body>
+  <div id="d1" style="float:left; width:100px; height:60px; background:red; text-align:center; line-height:60px">红</div>
+  <div style="float:left; width:10px; height:60px"></div>
+  <div id="d2" style="float:left; width:100px; height:60px; background:green; text-align:center; line-height:60px">绿</div>
+  <div style="float:left; width:10px; height:60px"></div>
+  <div id="d3" style="float:left; width:100px; height:60px; background:blue; text-align:center; line-height:60px">蓝</div>
+</body>
+
+<script type="text/javascript">
+$("#d1").mouseover(function(){
+	$(this).animate({
+		height: 300
+	}, {
+		duration: 500,
+		complete: function(){
+			$(this).append("<br/>红<br/>红<br/>红<br/>红")
+		}
+	});
+});
+
+$("#d1").mouseout(function(){
+	$(this).animate({
+		height: 60
+	}, {
+		duration: 500,
+		complete: function(){
+			$(this).html("红")
+		}
+	});
+});
+</script>
+
+</html>
